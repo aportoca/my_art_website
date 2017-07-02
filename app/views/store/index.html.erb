@@ -1,0 +1,37 @@
+
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="contentWrapper">
+<!-- first sidebar goes here -->
+<aside class="sidebar1">
+<h2>Hello Art World!</h2>
+  <p>This blog is an experiment of all the art areas that I am passionate about. I am creating this site in ruby on rails. </p>
+
+  <h3>My Children Inspire Me</h3>
+  <p>My little ones amaze and inspire me everyday. I love them so much!!!! </p>
+</aside>
+<!-- main content goes here -->
+<article class="main">
+	<h2>So Much Art To Create, So Little Time...</h2>
+  <p>One day at a time... I definitely have Art ADD. =) I have a lot to learn.</p>
+
+  <h3>I Am All Over The Place</h3>
+  <p>I want to do it all. </p>
+
+  <h3>Meet My Pets!</h3>
+  <p>My Bull Terrier Ruben and my Llamas Annie and Espresso. Another source of inspiration. </p>
+
+
+<% @products.each do | product | %>
+	<div class="figure">
+		<%= image_tag(product.image_url) %> <!-- image_tag helper method -->
+		<h3 class="figureimg"><%= product.title %></h3>
+		<%=sanitize product.description %>
+		<div class="price_line">
+			
+			<span class="price"><%= product.price %></span>
+		</div>
+	</div>
+	<% end %>
